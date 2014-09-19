@@ -1,8 +1,8 @@
 Template.things.events({
-  'change .catselect': function(e) {
-    Session.set('selectedCategory', e.target.value);
+  'change .catselect': function(e, template) {
+    template.data.selectedCategory.set(e.target.value);
   },
-  'change .thingselect': function(e) {
-    Session.set('selectedThing', e.target.value);
+  'change .thingselect': function(e, template) {
+    template.data.selectedThing.set(e.target.value);
   }
 });
