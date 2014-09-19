@@ -1,4 +1,6 @@
 <template name="things">
+<a href="{{ pathFor 'home' }}">Home</a>
+
 <h1>Things</h1>
 
 <select class="catselect" name="category">
@@ -8,12 +10,14 @@
   {{ /each }}
 </select>
 
+{{ #if selectedCategory }}
 <select class="thingselect" name="thing">
   <option value="">-- please choose --</option>
   {{ #each things }}
   <option value="{{ _id }}">{{ description }}</option>
   {{ /each }}
 </select>
+{{ /if }}
 
 {{ #with theThing }}
 <p>{{ description }} (category {{ category }})</p>
