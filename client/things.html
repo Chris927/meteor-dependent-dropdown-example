@@ -1,4 +1,26 @@
 <template name="things">
 <h1>Things</h1>
 
+<select class="catselect" name="category">
+  <option value="">-- please choose --</option>
+  {{ #each categories }}
+  <option value="{{ category }}">{{ description }}</option>
+  {{ /each }}
+</select>
+
+<select class="thingselect" name="thing">
+  <option value="">-- please choose --</option>
+  {{ #each things }}
+  <option value="{{ _id }}">{{ description }}</option>
+  {{ /each }}
+</select>
+
+{{ #with theThing }}
+<p>{{ description }} (category {{ category }})</p>
+{{ /with }}
+
+{{ #unless theThing }}
+<p>(no thing chosen)</p>
+{{ /unless }}
+
 </template>
